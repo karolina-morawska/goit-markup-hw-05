@@ -88,7 +88,8 @@ body {
   text-decoration: none;
   list-style: none;
   margin-left: auto;
-  align-items: center;
+  align-items: space-between;
+  position: relative;
 }
 
 .link {
@@ -110,12 +111,10 @@ body {
 .active::after {
   content: "";
   display: block;
-  position: relative;
+  position: absolute;
   border-top: 4px solid #2196f3;
   border-radius: 2px;
-  margin-bottom: -4px;
   top: 30px;
-  left: 0;
 }
 
 .icon {
