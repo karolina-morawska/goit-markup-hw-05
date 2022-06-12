@@ -27,10 +27,13 @@ body {
 
 /* index */
 
+/*wspólny header i trochę footer*/
+
 .logo:hover,
 .logo:focus {
   color: #2196f3;
   text-decoration: none;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo > a {
@@ -85,12 +88,12 @@ body {
   text-decoration: none;
   list-style: none;
   margin-left: auto;
+  align-items: center;
 }
 
 .link {
   font-weight: 500;
   font-size: 14px;
-  line-height: 16px;
   letter-spacing: 0.02em;
   color: #212121;
   margin-right: 46px;
@@ -101,6 +104,18 @@ body {
 .link:focus {
   color: #2196f3;
   text-decoration: none;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.active::after {
+  content: "";
+  display: block;
+  position: relative;
+  border-top: 4px solid #2196f3;
+  border-radius: 2px;
+  margin-bottom: -4px;
+  top: 30px;
+  left: 0;
 }
 
 .icon {
@@ -139,12 +154,14 @@ body {
 .contacts1 a:focus {
   color: #2196f3;
   text-decoration: none;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts2:hover,
 .contacts2:focus {
   color: #2196f3;
   text-decoration: none;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .bannerbackground {
@@ -179,6 +196,8 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+
+/*lorem ipsumy*/
 
 .loremipsum {
   display: flex;
@@ -231,6 +250,8 @@ body {
   margin-right: 0;
 }
 
+/*czym się zajmujemy*/
+
 .headline {
   font-weight: 700;
   font-size: 36px;
@@ -244,10 +265,42 @@ body {
 
 .what-we-do {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding-bottom: 94px;
   list-style: none;
 }
+
+.list-whatwedo {
+  margin-left: 15px;
+  margin-right: 15px;
+  list-style: none;
+  position: relative;
+}
+
+.description-whatwedo {
+  width: 370px;
+  height: 70px;
+  background-image: linear-gradient(
+    0deg,
+    rgba(47, 48, 58, 0.8) 0%,
+    rgba(47, 48, 58, 0.8) 100%
+  );
+  position: absolute;
+  bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+/*nasz zespół*/
 
 .team {
   background-color: #f5f4fa;
@@ -304,7 +357,7 @@ body {
   cursor: pointer;
 }
 
-.socialsforteam {
+.socials-team {
   display: flex;
   width: 44px;
   height: 44px;
@@ -341,12 +394,15 @@ body {
 .socials-background:hover,
 .socials-background:focus {
   background-color: #2196f3;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-background:hover svg,
 .socials-background:focus svg {
   fill: #fff;
 }
+
+/*nasi klienci*/
 
 .clientlist {
   list-style-type: none;
@@ -374,6 +430,7 @@ body {
 .ourclients:hover svg {
   fill: #2196f3;
   border-color: #2196f3;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clienticon {
@@ -385,6 +442,45 @@ body {
 .company {
   width: 106px;
   height: 60px;
+}
+
+/*okno modalne*/
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  min-height: 581px;
+  background-color: #fff;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 /*portfolio */
@@ -451,6 +547,7 @@ body {
   color: #ffffff;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu > li:first-child {
@@ -469,14 +566,14 @@ body {
 }
 
 .photos-list {
-  margin: 15px;
+  background-color: #fff;
+  border: 1px solid #eee;
   margin-bottom: 30px;
-  text-align: left;
-  list-style-type: none;
-  margin-top: -5px;
-  border-left: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
+  position: relative;
+  max-width: 370px;
+  max-height: 404px;
+  overflow: hidden;
+  z-index: 1001;
 }
 
 .photos-list:hover,
@@ -496,6 +593,7 @@ body {
   line-height: 2;
   list-style: none;
   letter-spacing: 0.06em;
+  color: #212121;
 }
 
 .photos span {
@@ -510,6 +608,18 @@ body {
   letter-spacing: 0.03em;
 }
 
+.photos-description {
+  position: relative;
+  z-index: 1002;
+  background-color: #fff;
+  color: #757575;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.03em;
+  text-align: left;
+  list-style: none;
+}
+
 .photos-list:nth-child(3n + 1) {
   margin-left: 0;
 }
@@ -521,6 +631,37 @@ body {
 }
 .photos-list:nth-child(-n + 3) {
   margin-top: 0;
+}
+
+.photos-list:hover .overlay {
+  transform: translateY(0);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2196f3;
+  opacity: 90%;
+  transform: translatey(100%);
+  transition: var(--transition);
+  transition-property: transform 250ms ease;
+}
+
+.overlay p {
+  text-align: left;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  padding-top: 49px;
+  padding-bottom: 49px;
+  padding-left: 24px;
+  padding-right: 45px;
 }
 
 .address {
@@ -566,7 +707,7 @@ body {
   margin-top: 20px;
 }
 
-.footerjoinus {
+.footer-joinus {
   display: inline-flex;
   flex-direction: column;
   justify-content: start;
@@ -584,7 +725,7 @@ body {
   color: #fff;
 }
 
-.footersocials {
+.footer-socials {
   display: flex;
   align-items: center;
   margin-top: 20px;
@@ -593,7 +734,7 @@ body {
   cursor: pointer;
 }
 
-.infootersocials {
+.in-footer-socials {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -613,8 +754,9 @@ body {
   fill: currentcolor;
 }
 
-.infootersocials:hover,
-.infootersocials:focus {
+.in-footer-socials:hover,
+.in-footer-socials:focus {
   background-color: #2196f3;
   color: #fff;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
