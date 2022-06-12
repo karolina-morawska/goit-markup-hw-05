@@ -107,13 +107,17 @@ body {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+a.link.active {
+  position: relative;
+}
 .active::after {
   content: "";
   display: block;
-  position: relative;
+  position: absolute;
   border-top: 4px solid #2196f3;
   border-radius: 2px;
-  top: 30px;
+  width: 100%;
+  bottom: -29px;
   left: 0;
 }
 
