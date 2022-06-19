@@ -436,6 +436,19 @@
           </li>
         </ul>
         </div>
+        <div class="container-footer-form">
+          <h3>Zapisz się do newslettera</h3> 
+              <div class="footer-form">
+                <form>
+                  <label>
+                    <input type="email" name="email" placeholder="E-mail" />
+                  </label>
+              <button type="submit"><span class="signup">Zapisz się</span><svg>
+                    <use href="images/icons.svg#form-send"></use>
+                  </svg></button>
+          
+            </form>
+              </div>
     </footer>
 <div class="backdrop is-hidden" data-modal>
   <div class="modal">
@@ -444,6 +457,61 @@
       <use href="./images/icons.svg#iconclose"></use>
     </svg>
     </button>
+    <form
+          class="modal-form"
+          name="signup-form"
+          action="http://localhost:3000/posts"
+          method="POST"
+        >
+          <h3>Zostaw swoje dane w formularzu poniżej</h3>
+          <label for="user_name"
+            >Imię
+            <svg class="icon-form-avatar icon-form">
+              <use href="images/icons.svg#form-avatar"></use>
+            </svg>
+            <input type="text" name="name" id="user_name" required />
+          </label>
+          <label for="user_phone"
+            >Telefon
+            <svg class="icon-form-phone icon-form">
+              <use href="images/icons.svg#form-phone"></use>
+            </svg>
+            <input type="tel" name="phone" id="user_phone" required
+          /></label>
+          <label for="user_email"
+            >E-mail
+            <svg class="icon-form-envelope icon-form">
+              <use href="images/icons.svg#form-envelope"></use>
+            </svg>
+
+            <input type="email" name="email" id="user_email" required />
+          </label>
+          <label>
+            Komentarz
+            <textarea
+              type="text"
+              name="comment"
+              placeholder="Wprowadź tekst"
+            ></textarea>
+          </label>
+
+          <div class="checkbox-container">
+            <input
+              class="web-checkbox"
+              type="checkbox"
+              name="consent"
+              value="consent"
+              required
+            />
+
+            <label for="consent" class="checkbox-label">
+              Oświadczam, iż akceptuję
+              <a href="#rules">Regulamin</a> i
+              <a href="#privacypolicy">Politykę Prywatności</a>.
+            </label>
+          </div>
+          <button type="submit">Wyślij</button>
+        </form>
   </div>
 </div>
     <script src="./js/modal.js"></script>
